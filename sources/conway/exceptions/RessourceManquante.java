@@ -3,22 +3,13 @@ package conway.exceptions;
 import java.text.MessageFormat;
 
 /**
- * 
- * @author GUEHENNEUX
- * 
+ * @author Jonathan Guéhenneux
  */
 public class RessourceManquante extends Exception {
 
-	/**
-	 * UID genere le 30/04/2010
-	 */
-	private static final long serialVersionUID = 7903307454194832392L;
-
-	private static final MessageFormat FORMAT_MESSAGE = new MessageFormat(
-			"La ressource {0} est manquante.");
+	private static final MessageFormat FORMAT_MESSAGE = new MessageFormat("La ressource {0} est manquante.");
 
 	/**
-	 * 
 	 * @param cheminRessource
 	 * @return
 	 */
@@ -27,7 +18,6 @@ public class RessourceManquante extends Exception {
 		String[] parametresMessage = { cheminRessource };
 		String message = FORMAT_MESSAGE.format(parametresMessage);
 		return message;
-
 	}
 
 	private String cheminRessource;
@@ -40,11 +30,9 @@ public class RessourceManquante extends Exception {
 		super(fabriquerMessage(cheminRessource));
 
 		this.cheminRessource = cheminRessource;
-
 	}
 
 	/**
-	 * 
 	 * @param cheminRessource
 	 * @param exceptionMere
 	 */
@@ -53,7 +41,6 @@ public class RessourceManquante extends Exception {
 		super(fabriquerMessage(cheminRessource), exceptionMere);
 
 		this.cheminRessource = cheminRessource;
-
 	}
 
 	/**
@@ -62,5 +49,4 @@ public class RessourceManquante extends Exception {
 	public String getCheminRessource() {
 		return cheminRessource;
 	}
-
 }

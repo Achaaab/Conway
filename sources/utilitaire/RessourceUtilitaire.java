@@ -4,14 +4,11 @@ import java.io.InputStream;
 import java.net.URL;
 
 /**
- * 
- * @author GUEHENNEUX
- * 
+ * @author Jonathan Guéhenneux
  */
 public class RessourceUtilitaire {
 
 	/**
-	 * 
 	 * @param cheminRessource
 	 * @return
 	 */
@@ -20,12 +17,10 @@ public class RessourceUtilitaire {
 	}
 
 	/**
-	 * 
 	 * @param cheminRessource
 	 * @return
 	 */
 	public static InputStream getFluxLecture(String cheminRessource) {
 		return RessourceUtilitaire.class.getResourceAsStream(cheminRessource);
 	}
-
 }

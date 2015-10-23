@@ -6,16 +6,15 @@ import java.util.Map;
 
 import javax.swing.filechooser.FileView;
 
+import utilitaire.fichier.FichierUtilitaire;
 import conway.fichier.FichierConway;
 
-import utilitaire.fichier.FichierUtilitaire;
-
 /**
- * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class VueFichierConway extends FileView {
+
+	public static final VueFichierConway INSTANCE = new VueFichierConway();
 
 	public static final Map<String, String> DESCRIPTIONS_EXTENSIONS;
 
@@ -48,28 +47,11 @@ public class VueFichierConway extends FileView {
 		description = "Fichier LIFE 1.05";
 		DESCRIPTIONS_EXTENSIONS.put(FichierConway.LIF, description);
 		DESCRIPTIONS_EXTENSIONS.put(FichierConway.LIFE, description);
-
-	}
-
-	private static VueFichierConway instance;
-
-	/**
-	 * 
-	 * @return l'instance unique de la classe
-	 */
-	public static synchronized VueFichierConway getInstance() {
-
-		if (instance == null) {
-			instance = new VueFichierConway();
-		}
-
-		return instance;
-
 	}
 
 	/**
-	 * constructeur prive pour appliquer forcer l'utilisation du singleton
-	 * (inutile d'instancier plusieurs fois cette classe)
+	 * constructeur prive pour appliquer forcer l'utilisation du singleton (inutile d'instancier plusieurs fois cette
+	 * classe)
 	 */
 	private VueFichierConway() {
 
@@ -80,7 +62,5 @@ public class VueFichierConway extends FileView {
 
 		String extension = FichierUtilitaire.getExtension(fichier);
 		return DESCRIPTIONS_EXTENSIONS.get(extension);
-
 	}
-
 }

@@ -6,12 +6,9 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 /**
- * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
-public class EcouteurCreationCellule implements MouseListener,
-		MouseMotionListener {
+public class EcouteurCreationCellule implements MouseListener, MouseMotionListener {
 
 	private PresentationPopulation population;
 
@@ -49,15 +46,10 @@ public class EcouteurCreationCellule implements MouseListener,
 			xCurseur = evenement.getX();
 			yCurseur = evenement.getY();
 
-			coordonneesCellule = population.getCoordonneesCellule(xCurseur,
-					yCurseur);
-
+			coordonneesCellule = population.getCoordonneesCellule(xCurseur, yCurseur);
 			population.inverserCellule(coordonneesCellule);
-
 			coordonneesCellulePrecedente = coordonneesCellule;
-
 		}
-
 	}
 
 	@Override
@@ -73,24 +65,18 @@ public class EcouteurCreationCellule implements MouseListener,
 			xCurseur = evenement.getX();
 			yCurseur = evenement.getY();
 
-			coordonneesCellule = population.getCoordonneesCellule(xCurseur,
-					yCurseur);
+			coordonneesCellule = population.getCoordonneesCellule(xCurseur, yCurseur);
 
 			if (!coordonneesCellule.equals(coordonneesCellulePrecedente)) {
 
 				population.inverserCellule(coordonneesCellule);
-
 				coordonneesCellulePrecedente = coordonneesCellule;
-
 			}
-
 		}
-
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent evenement) {
 
 	}
-
 }

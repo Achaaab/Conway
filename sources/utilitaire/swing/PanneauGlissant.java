@@ -17,7 +17,6 @@ public abstract class PanneauGlissant extends PanneauTampon {
 	protected int zoomMaximum;
 
 	/**
-	 * 
 	 * @param zoomMinimum
 	 * @param zoomMaximum
 	 */

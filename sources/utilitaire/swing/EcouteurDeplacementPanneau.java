@@ -10,16 +10,11 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 
 /**
- * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
-public class EcouteurDeplacementPanneau implements MouseListener,
-		MouseMotionListener, MouseWheelListener, KeyListener {
+public class EcouteurDeplacementPanneau implements MouseListener, MouseMotionListener, MouseWheelListener, KeyListener {
 
-	private static final Cursor CURSEUR_MAIN_OUVERTE = new Cursor(
-			Cursor.HAND_CURSOR);
-
+	private static final Cursor CURSEUR_MAIN_OUVERTE = new Cursor(Cursor.HAND_CURSOR);
 	private static final Cursor CURSEUR_DEFAUT = Cursor.getDefaultCursor();
 
 	private PanneauGlissant panneauGlissant;
@@ -46,9 +41,7 @@ public class EcouteurDeplacementPanneau implements MouseListener,
 			int yImage = y - yOrigine;
 
 			panneauGlissant.deplacerImage(xImage, yImage);
-
 		}
-
 	}
 
 	@Override
@@ -82,9 +75,7 @@ public class EcouteurDeplacementPanneau implements MouseListener,
 
 			xOrigine = evenement.getX();
 			yOrigine = evenement.getY();
-
 		}
-
 	}
 
 	@Override
@@ -97,9 +88,7 @@ public class EcouteurDeplacementPanneau implements MouseListener,
 			if (panneauGlissant.getRps() > 0) {
 				panneauGlissant.reprendreRafraichissementAutomatique();
 			}
-
 		}
-
 	}
 
 	@Override
@@ -113,7 +102,6 @@ public class EcouteurDeplacementPanneau implements MouseListener,
 		zoom -= rotation;
 
 		panneauGlissant.setZoom(zoom, x, y);
-
 	}
 
 	@Override
@@ -124,7 +112,6 @@ public class EcouteurDeplacementPanneau implements MouseListener,
 		if (touche == KeyEvent.VK_SHIFT) {
 			panneauGlissant.setCursor(CURSEUR_MAIN_OUVERTE);
 		}
-
 	}
 
 	@Override
@@ -135,12 +122,10 @@ public class EcouteurDeplacementPanneau implements MouseListener,
 		if (touche == KeyEvent.VK_SHIFT) {
 			panneauGlissant.setCursor(CURSEUR_DEFAUT);
 		}
-
 	}
 
 	@Override
 	public void keyTyped(KeyEvent evenement) {
 
 	}
-
 }

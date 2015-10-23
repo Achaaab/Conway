@@ -150,5 +150,4 @@ public class FichierRle extends FichierConway {
 	public void ajouter(Population population) throws IOException {
 		structure.creer(population, x, y);
 	}
-
 }

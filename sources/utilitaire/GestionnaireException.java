@@ -4,14 +4,11 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- * 
- * @author GUEHENNEUX
- * 
+ * @author Jonathan Guéhenneux
  */
 public class GestionnaireException {
 
 	/**
-	 * 
 	 * @param erreur
 	 */
 	public static void traiter(Throwable erreur) {
@@ -30,22 +27,17 @@ public class GestionnaireException {
 
 		if (erreurInitiale != erreur) {
 
-			String typeErreurInitiale = erreurInitiale.getClass()
-					.getSimpleName();
+			String typeErreurInitiale = erreurInitiale.getClass().getSimpleName();
 
 			String messageErreurInitiale = erreurInitiale.getLocalizedMessage();
 
 			message.append("\nCause : ");
 			message.append(typeErreurInitiale);
 			message.append('(' + messageErreurInitiale + ')');
-
 		}
 
 		erreur.printStackTrace();
 
-		JOptionPane.showMessageDialog(fenetreErreur, message, "Erreur",
-				JOptionPane.ERROR_MESSAGE);
-
+		JOptionPane.showMessageDialog(fenetreErreur, message, "Erreur", JOptionPane.ERROR_MESSAGE);
 	}
-
 }

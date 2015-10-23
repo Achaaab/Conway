@@ -5,10 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Structure de cellules stockees sous forme de liste.
+ * Structure de cellules stockées sous forme de liste.
  * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class StructureListe implements Structure {
 
@@ -43,7 +42,5 @@ public class StructureListe implements Structure {
 		for (Point cellule : cellules) {
 			population.creerCelluleVivante(x + cellule.x, y + cellule.y);
 		}
-
 	}
-
 }

@@ -1,7 +1,7 @@
 package utilitaire;
 
 /**
- * @author GUEHENNEUX
+ * @author Jonathan Guéhenneux
  */
 public abstract class ProcessusInterruptible extends Thread {
 
@@ -10,14 +10,13 @@ public abstract class ProcessusInterruptible extends Thread {
 	private Chronometre chronometre;
 
 	/**
-     * 
-     */
+	 * 
+	 */
 	public ProcessusInterruptible() {
 		this(0);
 	}
 
 	/**
-	 * 
 	 * @param dureeBoucle
 	 */
 	public ProcessusInterruptible(long dureeBoucle) {
@@ -26,7 +25,6 @@ public abstract class ProcessusInterruptible extends Thread {
 		this.dureeBoucle = dureeBoucle;
 
 		chronometre = new Chronometre();
-
 	}
 
 	/**
@@ -48,8 +46,7 @@ public abstract class ProcessusInterruptible extends Thread {
 			boucle();
 			dureeBoucleInterneSecondes = chronometre.stop("boucle");
 
-			dureeBoucleInterne = Math.round(dureeBoucleInterneSecondes
-					* Chronometre.MILLISECONDES_PAR_SECONDE);
+			dureeBoucleInterne = Math.round(dureeBoucleInterneSecondes * Chronometre.MILLISECONDES_PAR_SECONDE);
 
 			if (dureeBoucleInterne < dureeBoucle) {
 
@@ -57,16 +54,13 @@ public abstract class ProcessusInterruptible extends Thread {
 					sleep(dureeBoucle - dureeBoucleInterne);
 				} catch (InterruptedException erreur) {
 				}
-
 			}
-
 		}
-
 	}
 
 	/**
-	 * effectue une iteration, l'iteration est l'operation atomique effectuee
-	 * par le processus et ne peut etre interrompue
+	 * effectue une iteration, l'iteration est l'operation atomique effectuee par le processus et ne peut etre
+	 * interrompue
 	 */
 	public abstract void boucle();
 
@@ -84,5 +78,4 @@ public abstract class ProcessusInterruptible extends Thread {
 	public void setDureeBoucle(long dureeBoucle) {
 		this.dureeBoucle = dureeBoucle;
 	}
-
 }

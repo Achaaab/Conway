@@ -4,23 +4,19 @@ import java.awt.Window;
 
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
- * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class LookAndFeelUtilitaire {
 
 	/**
-	 * Tente d'appliquer un look and feel en le recherchant par son nom dans la
-	 * liste des look and feel installes. Actualise toutes les fenetres de
-	 * l'application.
+	 * Tente d'appliquer un look and feel en le recherchant par son nom dans la liste des look and feel installes.
+	 * Actualise toutes les fenetres de l'application.
 	 * 
-	 * Ne fait rien si le aucun des look and feel installes ne porte le nom
-	 * fourni.
+	 * Ne fait rien si le aucun des look and feel installes ne porte le nom fourni.
 	 * 
 	 * 
 	 * @param nom
@@ -30,12 +26,10 @@ public class LookAndFeelUtilitaire {
 	 * @throws InstantiationException
 	 * @throws ClassNotFoundException
 	 */
-	public static void setLookAndFeelParNom(String nom)
-			throws ClassNotFoundException, InstantiationException,
+	public static void setLookAndFeelParNom(String nom) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, UnsupportedLookAndFeelException {
 
-		LookAndFeelInfo[] informationsLnf = UIManager
-				.getInstalledLookAndFeels();
+		LookAndFeelInfo[] informationsLnf = UIManager.getInstalledLookAndFeels();
 
 		String nomLnf;
 
@@ -48,11 +42,8 @@ public class LookAndFeelUtilitaire {
 				String classeLnf = informationLnf.getClassName();
 				setLookAndFeelParClasse(classeLnf);
 				break;
-
 			}
-
 		}
-
 	}
 
 	/**
@@ -65,8 +56,7 @@ public class LookAndFeelUtilitaire {
 	 * @throws InstantiationException
 	 * @throws ClassNotFoundException
 	 */
-	public static void setLookAndFeelParClasse(String classe)
-			throws ClassNotFoundException, InstantiationException,
+	public static void setLookAndFeelParClasse(String classe) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, UnsupportedLookAndFeelException {
 
 		UIManager.setLookAndFeel(classe);
@@ -77,9 +67,6 @@ public class LookAndFeelUtilitaire {
 
 			SwingUtilities.updateComponentTreeUI(fenetre);
 			fenetre.pack();
-
 		}
-
 	}
-
 }

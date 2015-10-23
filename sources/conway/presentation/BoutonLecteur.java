@@ -6,19 +6,11 @@ import javax.swing.Icon;
 import javax.swing.JButton;
 
 /**
- * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class BoutonLecteur extends JButton {
 
 	/**
-	 * UID genere le 25/05/2010
-	 */
-	private static final long serialVersionUID = -8890215816301927881L;
-
-	/**
-	 * 
 	 * @param iconeDesactive
 	 * @param iconeNormal
 	 * @param iconeSurvole
@@ -51,7 +43,5 @@ public class BoutonLecteur extends JButton {
 
 		Dimension taille = new Dimension(largeur, hauteur);
 		setPreferredSize(taille);
-
 	}
-
 }

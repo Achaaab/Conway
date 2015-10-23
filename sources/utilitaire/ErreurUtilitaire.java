@@ -1,14 +1,11 @@
 package utilitaire;
 
 /**
- * 
- * @author GUEHENNEUX
- * 
+ * @author Jonathan Guéhenneux
  */
 public class ErreurUtilitaire {
 
 	/**
-	 * 
 	 * @param erreur
 	 * @return
 	 */
@@ -24,7 +21,5 @@ public class ErreurUtilitaire {
 		}
 
 		return erreurInitiale;
-
 	}
-
 }

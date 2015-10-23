@@ -11,14 +11,9 @@ import javax.swing.JPanel;
 import utilitaire.Chronometre;
 
 /**
- * @author GUEHENNEUX
+ * @author Jonathan Guéhenneux
  */
 public abstract class PanneauTampon extends JPanel {
-
-	/**
-	 * UID genere le 20/05/2010
-	 */
-	private static final long serialVersionUID = -3130300621492240894L;
 
 	private static final Timer TIMER_RAFRAICHISSEMENT = new Timer();
 
@@ -80,7 +75,6 @@ public abstract class PanneauTampon extends JPanel {
 
 		redessiner = false;
 		repaint();
-
 	}
 
 	/**
@@ -94,11 +88,8 @@ public abstract class PanneauTampon extends JPanel {
 		this.hauteur = hauteur;
 
 		image = new BufferedImage(largeur, hauteur, BufferedImage.TYPE_INT_ARGB);
-
 		graphique = image.createGraphics();
-
 		graphique.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
 	}
 
 	/**
@@ -123,11 +114,8 @@ public abstract class PanneauTampon extends JPanel {
 		this.rps = rps;
 
 		interrompreRafraichissementAutomatique();
-
 		rafraichissement = new Rafrachissement(this);
-
 		TIMER_RAFRAICHISSEMENT.schedule(rafraichissement, 0, Chronometre.MILLISECONDES_PAR_SECONDE / rps);
-
 	}
 
 	/**
@@ -138,7 +126,6 @@ public abstract class PanneauTampon extends JPanel {
 		if (rafraichissement != null) {
 			rafraichissement.cancel();
 		}
-
 	}
 
 	/**
@@ -147,5 +134,4 @@ public abstract class PanneauTampon extends JPanel {
 	public int getRps() {
 		return rps;
 	}
-
 }

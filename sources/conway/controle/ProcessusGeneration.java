@@ -3,10 +3,9 @@ package conway.controle;
 import utilitaire.ProcessusInterruptible;
 
 /**
- * Processus charge de calculer les nouvelles generations d'une population.
+ * Processus chargé de calculer les nouvelles générations d'une population.
  * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class ProcessusGeneration extends ProcessusInterruptible {
 
@@ -23,5 +22,4 @@ public class ProcessusGeneration extends ProcessusInterruptible {
 	public void boucle() {
 		population.generationSuivante();
 	}
-
 }

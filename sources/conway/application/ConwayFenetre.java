@@ -5,9 +5,7 @@ import utilitaire.swing.FenetreApplication;
 import conway.controle.Conway;
 
 /**
- * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class ConwayFenetre {
 
@@ -22,9 +20,6 @@ public class ConwayFenetre {
 		LookAndFeelUtilitaire.setLookAndFeelParNom("Nimbus");
 
 		Conway conway = new Conway();
-		new FenetreApplication(conway.getPresentation(),
-				"Le jeu de la vie (Conway)");
-
+		new FenetreApplication(conway.getPresentation(), "Le jeu de la vie (Conway)");
 	}
-
 }

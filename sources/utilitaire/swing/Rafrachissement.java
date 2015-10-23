@@ -4,9 +4,7 @@ import java.awt.Component;
 import java.util.TimerTask;
 
 /**
- * 
- * @author GUEHENNEUX
- * 
+ * @author Jonathan Guéhenneux
  */
 public class Rafrachissement extends TimerTask {
 
@@ -23,5 +21,4 @@ public class Rafrachissement extends TimerTask {
 	public void run() {
 		composant.repaint();
 	}
-
 }

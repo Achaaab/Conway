@@ -4,14 +4,13 @@ import java.awt.Color;
 import java.util.Random;
 
 /**
- * @author GUEHENNEUX
+ * @author Jonathan Guéhenneux
  */
 public class CouleurUtilitaire {
 
-	private static Random RANDOM = new Random();
+	private static final Random RANDOM = new Random();
 
 	/**
-	 * 
 	 * @param rgb
 	 * @return
 	 */
@@ -24,7 +23,6 @@ public class CouleurUtilitaire {
 		int niveauGris = Math.round(r * 0.299f + g * 0.587f + b * 0.114f);
 
 		return niveauGris;
-
 	}
 
 	/**
@@ -34,8 +32,8 @@ public class CouleurUtilitaire {
 	 * @param colorMaximum
 	 * @return
 	 */
-	public static Color getCouleurIntermediaire(double minimum,
-			Color colorMinimum, double maximum, Color colorMaximum, double value) {
+	public static Color getCouleurIntermediaire(double minimum, Color colorMinimum, double maximum, Color colorMaximum,
+			double value) {
 
 		Color colorValue;
 
@@ -58,29 +56,21 @@ public class CouleurUtilitaire {
 			double colorMaximumPart = relativeValue / range;
 			double colorMinimumPart = 1.0 - colorMaximumPart;
 
-			double r = colorMinimumPart * colorMinimum.getRed()
-					+ colorMaximumPart * colorMaximum.getRed();
-
-			double g = colorMinimumPart * colorMinimum.getGreen()
-					+ colorMaximumPart * colorMaximum.getGreen();
-
-			double b = colorMinimumPart * colorMinimum.getBlue()
-					+ colorMaximumPart * colorMaximum.getBlue();
+			double r = colorMinimumPart * colorMinimum.getRed() + colorMaximumPart * colorMaximum.getRed();
+			double g = colorMinimumPart * colorMinimum.getGreen() + colorMaximumPart * colorMaximum.getGreen();
+			double b = colorMinimumPart * colorMinimum.getBlue() + colorMaximumPart * colorMaximum.getBlue();
 
 			int red = (int) Math.round(r);
 			int green = (int) Math.round(g);
 			int blue = (int) Math.round(b);
 
 			colorValue = new Color(red, green, blue);
-
 		}
 
 		return colorValue;
-
 	}
 
 	/**
-	 * 
 	 * @param saturation
 	 * @param valeur
 	 * @return
@@ -90,7 +80,6 @@ public class CouleurUtilitaire {
 		float teinte = RANDOM.nextFloat();
 
 		return Color.getHSBColor(teinte, saturation, valeur);
-
 	}
 
 	/**
@@ -103,7 +92,5 @@ public class CouleurUtilitaire {
 		int b = RANDOM.nextInt(256);
 
 		return new Color(r, g, b);
-
 	}
-
 }

@@ -8,9 +8,7 @@ import utilitaire.swing.PanneauGlissant;
 import conway.controle.Population;
 
 /**
- * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class PresentationPopulation extends PanneauGlissant {
 
@@ -31,7 +29,6 @@ public class PresentationPopulation extends PanneauGlissant {
 	private int hauteurCellule;
 
 	/**
-	 * 
 	 * @param population
 	 */
 	public PresentationPopulation(Population population) {
@@ -131,7 +128,6 @@ public class PresentationPopulation extends PanneauGlissant {
 	}
 
 	/**
-	 * 
 	 * @param coordonneesCellule
 	 */
 	public void inverserCellule(Point coordonneesCellule) {
@@ -139,7 +135,6 @@ public class PresentationPopulation extends PanneauGlissant {
 	}
 
 	/**
-	 * 
 	 * @param echantillon
 	 * @param largeurEchantillon
 	 * @param hauteurEchantillon

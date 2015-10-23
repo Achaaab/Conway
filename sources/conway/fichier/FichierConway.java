@@ -66,7 +66,7 @@ public abstract class FichierConway {
 	}
 
 	/**
-	 * Ajoute a la population la structure de cellules definie dans le fichier.
+	 * Ajoute à la population la structure de cellules definie dans le fichier.
 	 * 
 	 * @param population
 	 * @throws IOException

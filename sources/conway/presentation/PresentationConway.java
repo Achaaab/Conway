@@ -28,16 +28,9 @@ import conway.controle.Conway;
 import conway.fichier.FichierConway;
 
 /**
- * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class PresentationConway extends JPanel {
-
-	/**
-	 * UID genere le 25/05/2010
-	 */
-	private static final long serialVersionUID = 5317987271771499202L;
 
 	private static final int TAILLE_BOUTONS = 48;
 
@@ -82,7 +75,6 @@ public class PresentationConway extends JPanel {
 		ICONE_STOP_NORMAL = ChargeurRessources.getIcone("stop_normal_48.png");
 		ICONE_STOP_SURVOLE = ChargeurRessources.getIcone("stop_survole_48.png");
 		ICONE_STOP_ENFONCE = ChargeurRessources.getIcone("stop_enfonce_48.png");
-
 	}
 
 	private JFileChooser choixFichier;
@@ -137,7 +129,6 @@ public class PresentationConway extends JPanel {
 		creerComposants();
 		ajouterComposants();
 		ajouterEcouteurs();
-
 	}
 
 	/**
@@ -146,8 +137,8 @@ public class PresentationConway extends JPanel {
 	private final void creerComposants() {
 
 		choixFichier = new JFileChooser();
-		choixFichier.setFileView(VueFichierConway.getInstance());
-		choixFichier.setFileFilter(FiltreFichierConway.getInstance());
+		choixFichier.setFileView(VueFichierConway.INSTANCE);
+		choixFichier.setFileFilter(FiltreFichierConway.INSTANCE);
 
 		panneauPrincipal = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		panneauPrincipal.setOneTouchExpandable(true);
@@ -251,7 +242,6 @@ public class PresentationConway extends JPanel {
 
 		panneauEst = new JPanel();
 		panneauEst.setLayout(new BorderLayout());
-
 	}
 
 	/**
@@ -291,7 +281,6 @@ public class PresentationConway extends JPanel {
 
 		add(panneauPrincipal, BorderLayout.CENTER);
 		add(commandes, BorderLayout.SOUTH);
-
 	}
 
 	/**
@@ -305,7 +294,6 @@ public class PresentationConway extends JPanel {
 			public void actionPerformed(ActionEvent evenement) {
 				lecture();
 			}
-
 		});
 
 		pause.addActionListener(new ActionListener() {
@@ -323,7 +311,6 @@ public class PresentationConway extends JPanel {
 			public void actionPerformed(ActionEvent evenement) {
 				suivant();
 			}
-
 		});
 
 		stop.addActionListener(new ActionListener() {
@@ -332,7 +319,6 @@ public class PresentationConway extends JPanel {
 			public void actionPerformed(ActionEvent evenement) {
 				stop();
 			}
-
 		});
 
 		debridage.addActionListener(new ActionListener() {
@@ -341,7 +327,6 @@ public class PresentationConway extends JPanel {
 			public void actionPerformed(ActionEvent evenement) {
 				lireDebridage();
 			}
-
 		});
 
 		generation.addChangeListener(new ChangeListener() {
@@ -350,7 +335,6 @@ public class PresentationConway extends JPanel {
 			public void stateChanged(ChangeEvent evenement) {
 				lireTauxGeneration();
 			}
-
 		});
 
 		rafraichissement.addChangeListener(new ChangeListener() {
@@ -359,7 +343,6 @@ public class PresentationConway extends JPanel {
 			public void stateChanged(ChangeEvent evenement) {
 				lireTauxRafraichissement();
 			}
-
 		});
 
 		effacer.addActionListener(new ActionListener() {
@@ -368,7 +351,6 @@ public class PresentationConway extends JPanel {
 			public void actionPerformed(ActionEvent evenement) {
 				effacer();
 			}
-
 		});
 
 		ouvrir.addActionListener(new ActionListener() {
@@ -377,9 +359,7 @@ public class PresentationConway extends JPanel {
 			public void actionPerformed(ActionEvent evenement) {
 				ouvrir();
 			}
-
 		});
-
 	}
 
 	/**
@@ -400,9 +380,7 @@ public class PresentationConway extends JPanel {
 			} catch (Exception erreur) {
 				GestionnaireException.traiter(erreur);
 			}
-
 		}
-
 	}
 
 	/**

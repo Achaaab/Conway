@@ -5,11 +5,9 @@ import conway.presentation.PresentationConway;
 import conway.presentation.PresentationPopulation;
 
 /**
- * Objet principal de l'application. Encapsule une population et les actions
- * permettant de la manipuler.
+ * Objet principal de l'application. Encapsule une population et les actions permettant de la manipuler.
  * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class Conway {
 
@@ -44,12 +42,10 @@ public class Conway {
 
 		presentation = new PresentationConway(this);
 		population.setPresentationConway(presentation);
-
 	}
 
 	/**
-	 * Arrete le processus de generation. Reinitialise le compteur de
-	 * generations.
+	 * Arrete le processus de generation. Reinitialise le compteur de generations.
 	 * 
 	 * @throws InterruptedException
 	 */
@@ -61,9 +57,7 @@ public class Conway {
 			generation.join();
 			population.setGeneration(0);
 			population.setEditionManuellePossible(true);
-
 		}
-
 	}
 
 	/**
@@ -76,18 +70,12 @@ public class Conway {
 		generation = new ProcessusGeneration(population);
 
 		if (debride) {
-
 			generation.setDureeBoucle(0);
-
 		} else {
-
-			generation.setDureeBoucle(Chronometre.MILLISECONDES_PAR_SECONDE
-					/ tauxGeneration);
-
+			generation.setDureeBoucle(Chronometre.MILLISECONDES_PAR_SECONDE / tauxGeneration);
 		}
 
 		generation.start();
-
 	}
 
 	/**
@@ -101,7 +89,6 @@ public class Conway {
 
 		generation.interrompre();
 		population.setEditionManuellePossible(true);
-
 	}
 
 	/**
@@ -135,7 +122,6 @@ public class Conway {
 
 		this.tauxRafraichissement = tauxRafraichissement;
 		presentationPopulation.rafraichirAutomatiquement(tauxRafraichissement);
-
 	}
 
 	/**
@@ -149,12 +135,8 @@ public class Conway {
 		this.tauxGeneration = tauxGeneration;
 
 		if (generation != null && generation.isAlive()) {
-
-			generation.setDureeBoucle(Chronometre.MILLISECONDES_PAR_SECONDE
-					/ tauxGeneration);
-
+			generation.setDureeBoucle(Chronometre.MILLISECONDES_PAR_SECONDE / tauxGeneration);
 		}
-
 	}
 
 	/**
@@ -176,24 +158,16 @@ public class Conway {
 		if (generation != null && generation.isAlive()) {
 
 			if (debride) {
-
 				generation.setDureeBoucle(0);
-
 			} else {
-
-				generation.setDureeBoucle(Chronometre.MILLISECONDES_PAR_SECONDE
-						/ tauxGeneration);
-
+				generation.setDureeBoucle(Chronometre.MILLISECONDES_PAR_SECONDE / tauxGeneration);
 			}
-
 		}
-
 	}
 
 	/**
 	 * 
-	 * @return true si le processus de generation est debride (vitesse maximum)
-	 *         ou controle (vitesse specifiee).
+	 * @return true si le processus de generation est debride (vitesse maximum) ou controle (vitesse specifiee).
 	 */
 	public boolean isDebride() {
 		return debride;
@@ -219,5 +193,4 @@ public class Conway {
 	public PresentationConway getPresentation() {
 		return presentation;
 	}
-
 }

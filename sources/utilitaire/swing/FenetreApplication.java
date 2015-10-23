@@ -6,14 +6,9 @@ import java.awt.Component;
 import javax.swing.JFrame;
 
 /**
- * @author GUEHENNEUX
+ * @author Jonathan Guéhenneux
  */
 public class FenetreApplication extends JFrame {
-
-	/**
-	 * UID genere le 22/04/2010
-	 */
-	private static final long serialVersionUID = -7904338443275082054L;
 
 	/**
 	 * @param composant
@@ -23,7 +18,6 @@ public class FenetreApplication extends JFrame {
 	}
 
 	/**
-	 * 
 	 * @param composant
 	 * @param titre
 	 */
@@ -39,7 +33,5 @@ public class FenetreApplication extends JFrame {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
-
 	}
-
 }

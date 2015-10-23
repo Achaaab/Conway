@@ -4,13 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
- * @author guehenneux
- * 
+ * @author Jonathan Guéhenneux
  */
 public class Chronometre {
 
-	private static Chronometre instanceDefaut;
+	public static final Chronometre INSTANCE = new Chronometre();
 
 	public static final int MILLISECONDES_PAR_SECONDE = 1000;
 	public static final int MICROSECONDES_PAR_SECONDE = MILLISECONDES_PAR_SECONDE * 1000;
@@ -20,34 +18,18 @@ public class Chronometre {
 
 	/**
 	 * 
-	 * @return l'instance par defaut
-	 */
-	public static synchronized Chronometre getInstanceDefaut() {
-
-		if (instanceDefaut == null) {
-			instanceDefaut = new Chronometre();
-		}
-
-		return instanceDefaut;
-
-	}
-
-	/**
-	 * 
 	 */
 	public Chronometre() {
 		temps = new HashMap<String, Long>();
 	}
 
 	/**
-	 * 
 	 * @param cle
 	 */
 	public void start(String cle) {
 
 		long t = System.nanoTime();
 		temps.put(cle, t);
-
 	}
 
 	/**
@@ -62,7 +44,6 @@ public class Chronometre {
 		float t = Float.valueOf(t2 - t1);
 		float secondes = t / NANOSECONDES_PAR_SECONDE;
 		return secondes;
-
 	}
 
 	/**
@@ -75,7 +56,5 @@ public class Chronometre {
 		float secondes = tick(cle);
 		temps.remove(cle);
 		return secondes;
-
 	}
-
 }
